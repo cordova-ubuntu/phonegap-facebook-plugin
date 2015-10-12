@@ -127,6 +127,10 @@
                 <param policy_group="accounts" policy_version="1" />
                 <param hook="account-application" value="qml/app.application" />
                 <param hook="account-service" value="qml/app.service" />
+                <deps>
+                    <pkgConfig>["signond", "libsignon-qt5", "accounts-qt5", "OnlineAccountsClient"]</pkgConfig>
+                    <deb>["signond-dev:ARCH", "libsignon-qt5-dev:ARCH", "libaccounts-qt5-dev:ARCH", "libonline-accounts-client-dev:ARCH"]</deb>
+                </deps>
             </feature>
         </config-file>
         <config-file target="qml/facebookconnect.xml" parent="/*">
@@ -140,7 +144,5 @@
 
         <header-file src="platforms/ubuntu/facebookconnect.h" />
         <source-file src="platforms/ubuntu/facebookconnect.cpp" />
-
-        <resource-file src="platforms/ubuntu/facebookconnect.json" target-dir="configs/" />
     </platform>
 </plugin>
